@@ -1,5 +1,6 @@
 import logging
 import sys
+sys.path.append('/local1/malte/kidney_cyst/morphospaces/src/morphospaces')
 
 import pytorch_lightning as pl
 from monai.data import DataLoader
@@ -29,11 +30,11 @@ if __name__ == "__main__":
     patch_stride = (32, 32, 32)
     patch_threshold = 0
     lr = 0.0004
-    logdir_path = "./checkpoints_semantic"
+    logdir_path = "/local1/malte/kidney_cyst/images/train_nn/checkpoints_semantic_cbdice"
     image_key = "image"
     labels_key = "labels"
-    train_data_pattern = "./cube_data/*.h5"
-    val_data_pattern = "./cube_data/*.h5"
+    train_data_pattern = "/local1/malte/kidney_cyst/images/train_nn/chunks_binary/*.h5"
+    val_data_pattern = "/local1/malte/kidney_cyst/images/train_nn/chunks_binary/*.h5"
 
     # frequency of logging (training steps)
     log_every_n_iterations = 5

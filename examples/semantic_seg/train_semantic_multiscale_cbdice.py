@@ -148,7 +148,7 @@ if __name__ == "__main__":
     # learning rate monitor
     learning_rate_monitor = LearningRateMonitor(logging_interval="step")
 
-    net = MultiscaleSemanticSegmentationNet(
+    net = MultiscaleSemanticSegmentationNet_cbdice(
         in_channels=1,
         image_key=image_key,
         labels_key=labels_key,

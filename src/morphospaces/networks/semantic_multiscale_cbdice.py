@@ -37,9 +37,9 @@ class MultiscaleSemanticSegmentationNet_cbdice(pl.LightningModule):
         )
 
         # setup the loss functions
-        self.scale_0_loss = SoftcbDiceLoss()
-        self.scale_1_loss = SoftcbDiceLoss()
-        self.scale_2_loss = SoftcbDiceLoss()
+        self.scale_0_loss = SoftcbDiceLoss(iter = 30)
+        self.scale_1_loss = SoftcbDiceLoss(iter = 15)
+        self.scale_2_loss = SoftcbDiceLoss(iter = 5)
 
         self.iteration_count = 0
         self.validation_step_outputs = []
